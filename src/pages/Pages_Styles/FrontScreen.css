@@ -1,0 +1,126 @@
+.head {
+    background-image: url(https://img.freepik.com/free-vector/healthcare-background-with-medical-symbols-hexagonal-frame_1017-26363.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 98%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+   
+  }
+  .over-lay{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.2)
+  }
+  .nav-bar{
+    height: 80px;
+    width: 100%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.5)
+  }
+  
+  .nav-bar ul {
+    float: right;
+    margin: 22px 10px 10px 10px;
+    list-style: none;
+  }
+  .nav-bar ul li {
+    float: left;
+    margin: 5px;
+    margin-right: 15px;
+  }
+  .heading {
+    margin: 17px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+    float: left;
+  
+  }
+  .heading:hover{
+    font-size: 21px;
+  }
+  
+  .nav-bar ul li:hover {
+    border-bottom: 10px solid rgb(12, 18, 102);
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .heading-text{
+    color: rgb(211, 197, 197);
+    text-shadow:9px 9px  #352424 ;
+    font-size: 35px;
+    font-weight: bold
+  }
+  .overlay {
+    margin-top: 335px;
+    margin-left: 30px;
+    font-size: 30px;
+  }
+  .sheading {
+    color: rgb(247, 247, 247);
+    font-weight: bolder;
+  }
+  .lheading{
+    color: rgb(255, 242, 218);
+    font-size: 15px;
+  }
+  .Login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: "Inter";
+
+  }
+  .Login__form{
+    display: flex;
+    flex-direction: column;
+  }
+  .Login__form>h1{
+    font-size: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    letter-spacing: -1px;
+    color: rgb(0, 17, 7);
+  }
+  .Login__form>input{
+    min-width: 380px;
+    padding: 20px 0;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 15px;
+  }
+  .submit__btn{
+    padding: 17px 30px;
+    margin-top: 10px;
+    background: black;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-family: "Inter";
+    border-radius: 3px;
+    cursor: pointer;
+
+  }
+  
+  
+  
+  
+  
+  
