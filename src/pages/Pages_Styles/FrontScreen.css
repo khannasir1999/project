@@ -90,11 +90,14 @@
     flex-direction: column;
   }
   .Login__form>h1{
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 15px;
     padding-bottom: 10px;
     letter-spacing: -1px;
-    color: rgb(0, 17, 7);
+    font-style: italic;
+    font-weight: 4000;
+    color: rgb(50, 99, 205);
+    
   }
   .Login__form>input{
     min-width: 380px;

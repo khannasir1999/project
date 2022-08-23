@@ -15,6 +15,8 @@ const FrontScreen =  () => {
         </div>
         <div className="Login">
                 <form className="Login__form">
+                    <h1> Login Here</h1>
+                 
                   
                     <input type= "email" value={email} placeholder="Enter email" onChange = {(e) =>setEmail(e.target.value)}/>
                   
