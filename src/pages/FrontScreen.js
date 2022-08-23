@@ -11,9 +11,12 @@ const FrontScreen =  () => {
               <div className="over-lay">
       <div className="nav-bar">
         <div className="heading">
-          <h1 className="heading-text">My health App</h1>
+          <h1 className="heading-text">My Health App</h1>
         </div>
-        <div className="Login">
+        
+     
+      </div>
+      <div className="Login">
                 <form className="Login__form">
                     <h1> Login Here</h1>
                  
@@ -28,8 +31,6 @@ const FrontScreen =  () => {
                     <button type="submit" className="submit__btn" > Login </button>
                 </form>
             </div>
-     
-      </div>
 
 </div>
 </div>
