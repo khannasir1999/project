@@ -93,7 +93,7 @@ const current = new Date();
     
    
         <div className="title_app">
-        <img  src="https://img.freepik.com/free-vector/healthcare-background-with-medical-symbols-hexagonal-frame_1017-26363.jpg" alt="logo" style={{width: "5vh" , height: "5vh"}}/>
+        <img  src="https://1000logos.net/american-red-cross-logo/" alt="logo" style={{width: "10vh" , height: "10vh"}}/>
        
             My Health App.
   
@@ -125,7 +125,7 @@ const current = new Date();
                 
                 <br/>
                 check your activity.
-                <img src= "hello.jpg" alt="hello" />
+                <img  src="" alt="logo" style={{width: "10vh" , height: "10vh"}}/>
                 </div>
                 
             </div>
@@ -165,7 +165,12 @@ const current = new Date();
                     arrow left
                 </div>
                 <div className="col-lg-10" style={{backgroundColor: "grey"}}>
-                    tips how to take medicine
+                    <p className="blog"> How to Take Medicine </p>
+                    <p className="blog2"> In correct </p>
+                    <p className="blog3"> Way</p>
+                    {/* <div>
+                    <a href="blogs.com" className="blog_Read" > Read </a>
+                    </div> */}
                 </div>
                 <div className="col-lg-1">
                     right arrow
