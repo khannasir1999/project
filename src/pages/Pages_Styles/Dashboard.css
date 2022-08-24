@@ -1,4 +1,4 @@
-.Logout_btn{
+.logout_btn{
     padding: 17px 30px;
     margin-top: 10px;
     background: black;
@@ -8,4 +8,51 @@
     font-family: "Inter";
     border-radius: 3px;
     cursor: pointer;
+    float: right;
+}
+.whole_body{
+    background-color: black;
+}
+.title_app{
+    margin-top: 7px;
+
+    color: yellow;
+}
+.navbar_image{
+  
+ 
+}
+.users_info{
+    font-family: cursive;
+}
+.Date_box{
+    float: right;
+    padding: 8px 15px;
+    margin-top: 5px;
+    background: black;
+    border: none;
+    color: white;
+    font-size: 15;
+    font-family: "Inter";
+    border-radius: 15px;
+    margin-right: 10px;
+  
+}
+.Medication__btn{
+    float: right;
+    padding: 8px 15px;
+    margin-top: 5px;
+    background: lightblue;
+    border: none;
+    color: black;
+    font-size: 15;
+    font-family: "Inter";
+    border-radius: 15px;
+}
+.blood_pressure_card{
+   text-align: center;
+   margin-top: 5vh;
+}
+.blood_pressure_reading{
+    text-align: center;
 }
