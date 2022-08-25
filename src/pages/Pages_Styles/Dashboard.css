@@ -1,10 +1,10 @@
-.logout_btn{
+.logout__btn{
     padding: 17px 30px;
     margin-top: 10px;
-    background: black;
+    background: #E7FE55;
     border: none;
-    color: white;
-    font-size: 14px;
+    color: black;
+    font-size: 20px;
     font-family: "Inter";
     border-radius: 3px;
     cursor: pointer;
@@ -21,13 +21,17 @@
 
 .users_info{
     font-family: cursive;
+    color: white;
+    font-size: 31px;
 }
 .Date_box{
     float: right;
+    border-style: groove;
+    border-color: white;
     padding: 8px 15px;
     margin-top: 5px;
     background: black;
-    border: none;
+
     color: white;
     font-size: 15;
     font-family: "Inter";
@@ -41,44 +45,35 @@
     margin-top: 5px;
     background: lightblue;
     border: none;
-    color: black;
+    color: white;
     font-size: 15;
     font-family: "Inter";
     border-radius: 15px;
 }
-.blood_pressure_card{
-   text-align: center;
-   margin-top: 5vh;
+.bp_card{
+   color: white;
+   margin-left: 0px;
+   overflow:auto;
+   display:block;
+   margin-top: 83px;
 }
-.blood_pressure_reading{
-    text-align: center;
-}
-.blog{
+.bp_reading{
     color: white;
-    text-align: center;
-    font-style: oblique;
-    margin-bottom: 0px;
+    margin-left: 0px;
+    overflow:auto;
+    display:block;
 }
-.blog2{
-    color: white;
-    margin-left: 99vh;
-    font-style: oblique;
-    margin-bottom: 0px;
-}
-.blog3{
-    color: white;
-    margin-left: 99vh;
-    font-style: oblique;
-    margin-bottom: 0px;
-}
-.blog_Read{
+.profile__pic{
+    height: 100px;
+    width: 100px;
     
-    padding: 8px 15px;
-    margin-top: 5px;
-    background: lightblue;
-    border: none;
-    color: black;
-    font-size: 15;
-    font-family: "Inter";
-    border-radius: 15px;
+    margin-left: 140px;
+    border-style: groove;
+    border-color: white;
+    
+}
+.username{
+    display: block;
+    margin-left: 140px;
+    font-family: math;
 }
