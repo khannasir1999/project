@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux/es/exports";
 import { logout } from "../features/userSlice";
 import "../images/hello.jpg";
 import "../images/red cross.png";
+import {useNavigate} from "react-router-dom";
 import "../images/circle.jpg"
 import {
     LineChart,
@@ -19,69 +20,72 @@ import "../pages/Pages_Styles/Slider.css";
 import ImageSlider from "../components/ImageSlide";
 import { SliderData } from '../components/SliderData';
 
-const pdata = [
-    {
-        name: 'Jan',
-        upper_body_bp: 11,
-        lower_body_bp: 15
-    },
-    {
-        name: 'Feb',
-        upper_body_bp: 15,
-        lower_body_bp: 12
-    },
-    {
-        name: 'Mar',
-        upper_body_bp: 5,
-        lower_body_bp: 10
-    },
-    {
-        name: 'Apr',
-        upper_body_bp: 10,
-        lower_body_bp: 5
-    },
-    {
-        name: 'May',
-        upper_body_bp: 9,
-        lower_body_bp: 4
-    },
-    {
-        name: 'June',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    },
-    {
-        name: 'Jul',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    }, {
-        name: 'Aug',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    }, {
-        name: 'Sept',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    }, {
-        name: 'Oct',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    }, {
-        name: 'Nov',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    }, {
-        name: 'Dec',
-        upper_body_bp: 10,
-        lower_body_bp: 8
-    },
-];
+
 
 const Dashboard = () => {
+    const pdata = [
+        {
+            name: 'Jan',
+            upper_body_bp: 11,
+            lower_body_bp: 15
+        },
+        {
+            name: 'Feb',
+            upper_body_bp: 15,
+            lower_body_bp: 12
+        },
+        {
+            name: 'Mar',
+            upper_body_bp: 5,
+            lower_body_bp: 10
+        },
+        {
+            name: 'Apr',
+            upper_body_bp: 10,
+            lower_body_bp: 5
+        },
+        {
+            name: 'May',
+            upper_body_bp: 9,
+            lower_body_bp: 4
+        },
+        {
+            name: 'June',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        },
+        {
+            name: 'Jul',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        }, {
+            name: 'Aug',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        }, {
+            name: 'Sept',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        }, {
+            name: 'Oct',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        }, {
+            name: 'Nov',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        }, {
+            name: 'Dec',
+            upper_body_bp: 10,
+            lower_body_bp: 8
+        },
+    ];
+    const navigate = useNavigate();
 const dispatch = useDispatch();
 const handlelogout= (e)=>{
     e.preventDefault();
     dispatch (logout());
+    navigate("/");
 
 }
 const current = new Date();
@@ -92,7 +96,7 @@ const current = new Date();
     return (
 <>
 
-<div className="container-fluid" style={{backgroundColor: "currentColor;"}}>
+<div className="container-fluid" style={{backgroundColor: "currentColor"}}>
 <div className="row" >
     <div className="col-lg-12" /*style={{backgroundColor: "lightblue"}}*/>
     
