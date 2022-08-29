@@ -1,46 +1,80 @@
-import { Button, Modal } from 'antd';
-import React, { useState } from 'react';
+import { Button, Checkbox, Form, Input } from 'antd';
+import React from 'react';
 
-const SignupModal = () => {
-  const [visible, setVisible] = useState(false);
-  const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState('Content of the modal');
-
-  const showModal = () => {
-    setVisible(true);
+const App = () => {
+  const onFinish = (values) => {
+    console.log('Success:', values);
   };
 
-  const handleOk = () => {
-    setModalText('The modal will be closed after two seconds');
-    setConfirmLoading(true);
-    setTimeout(() => {
-      setVisible(false);
-      setConfirmLoading(false);
-    }, 2000);
-  };
-
-  const handleCancel = () => {
-    console.log('Clicked cancel button');
-    setVisible(false);
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
   };
 
   return (
-    <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal with async logic
-      </Button>
-      <Modal
-        title="Title"
-        visible={visible}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-        style = {{position: "center"}}
+    <Form
+      name="basic"
+      labelCol={{
+        span: 8,
+      }}
+      wrapperCol={{
+        span: 16,
+      }}
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      autoComplete="off"
+    >
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username!',
+          },
+        ]}
       >
-        <p>{modalText}</p>
-      </Modal>
-    </>
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your password!',
+          },
+        ]}
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item
+        name="remember"
+        valuePropName="checked"
+        wrapperCol={{
+          offset: 8,
+          span: 16,
+        }}
+      >
+        <Checkbox>Remember me</Checkbox>
+      </Form.Item>
+
+      <Form.Item
+        wrapperCol={{
+          offset: 8,
+          span: 16,
+        }}
+      >
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
   );
 };
 
-export default SignupModal;
+export default App;
