@@ -76,26 +76,33 @@ const FrontScreen = () => {
   //     setInputError("invalid credentials");
   //   }
   // };
-  const handle_signup =async (e) => {
+  const handle_signup = async (e) => {
+    //e.preventDefault();
     try {
-      const res = await axios.post("https://localhost:44373/api/CrudOperation/CreateRecord",
-      {
-        UserName: inputusername,
-        Age: inputage,
-      });
-      if (res.status === 200) {
-        localStorage.setItem("Username", res.data.user.username);
-        
+      const res = await axios.post(
+        "https://localhost:44373/api/CrudOperation/CreateRecord",
+        {
+          username: inputusername,
+          age: inputage,
+        }
+      );
 
-        localStorage.setItem("age", res.data.user.age);
+      if (res.status === 200) {
+        console.log(res);
+        localStorage.setItem("username", res.username);
+        localStorage.setItem("age", res.age);
+
         window.alert("registered");
       }
-      
     } catch (error) {
-      setInputError("Fields empty")
+      console.log(error);
+      setInputError("Some error occured");
     }
+  };
 
-  }
+
+
+     
 
   return (
     <div className="head">
@@ -153,6 +160,7 @@ const FrontScreen = () => {
       <Form.Item
         label="Username"
         name="username"
+        value = {inputusername}
         rules={[
           {
             required: true,
@@ -166,6 +174,7 @@ const FrontScreen = () => {
       <Form.Item
         label="age"
         name="age"
+        value={inputage}
         rules={[
           {
             required: true,
@@ -173,7 +182,7 @@ const FrontScreen = () => {
           },
         ]}
       >
-        <Input.Password  onChange={(e) => setInputage(e.target.value)} />
+        <Input  onChange={(e) => setInputage(e.target.value)} />
       </Form.Item>
 
       <Form.Item
