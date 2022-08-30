@@ -11,8 +11,8 @@ const FrontScreen = () => {
   // const [email , setEmail] = useState("");
   // const [password , setPassword] = useState("");
 
-  const [inputusername, setInputusername] = useState("");
-  const [inputage, setInputage] = useState("");
+  const [inputUserName, setInputUserName] = useState("");
+  const [inputAge, setInputAge] = useState("");
   const [inputError, setInputError] = useState("");
   const onFinish = (values) => {
     console.log('Success:', values);
@@ -22,16 +22,16 @@ const FrontScreen = () => {
     console.log('Failed:', errorInfo);
   };
   useEffect(() => {
-    if (inputusername) {
+    if (inputUserName) {
       setInputError("");
     }
-  }, [inputusername]);
+  }, [inputUserName]);
 
   useEffect(() => {
-    if (inputage){
+    if (inputAge){
       setInputError("");
     }
-  }, [inputage]);
+  }, [inputAge]);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -77,20 +77,21 @@ const FrontScreen = () => {
   //   }
   // };
   const handle_signup = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
+   
     try {
-      const res = await axios.post(
-        "https://localhost:44373/api/CrudOperation/CreateRecord",
+      const res = await axios.Create(
+        "https://localhost:44373/api/controller/CreateRecord",
         {
-          username: inputusername,
-          age: inputage,
+          UserName: inputUserName,
+          Age: inputAge,
         }
       );
 
       if (res.status === 200) {
         console.log(res);
-        localStorage.setItem("username", res.username);
-        localStorage.setItem("age", res.age);
+        localStorage.setItem("UserName", res.data.UserName);
+        localStorage.setItem("Age", res.data.Age);
 
         window.alert("registered");
       }
@@ -142,71 +143,29 @@ const FrontScreen = () => {
           </form>
         </div> */}
         <div className="Login">
-        <Form
-      name="basic"
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      <Form.Item
-        label="Username"
-        name="username"
-        value = {inputusername}
-        rules={[
-          {
-            required: true,
-            message: 'Please input your username!',
-          },
-        ]}
-      >
-        <Input  onChange={(e) => setInputusername(e.target.value) }/>
-      </Form.Item>
+      
+    <form className="login__form">
+      <input type="userName"
+      name="userName"
+      value={inputUserName}
+      placeholder = "Enter username"
+      onChange={ (e) => setInputUserName(e.target.value)}
+      />
+      <input type="Age"
+      name="Age"
+      value={inputAge}
+placeholder = "Enter Age"
+onChange={ (e) => setInputAge(e.target.value)}
+/>
+<button type="submit" className="submit__btn" onClick={handle_signup}> Add User</button>
+<div style={{ color: "red", margin: "10px" }}>{inputError}</div>
+    </form>
+    
 
-      <Form.Item
-        label="age"
-        name="age"
-        value={inputage}
-        rules={[
-          {
-            required: true,
-            message: 'Please input your age!',
-          },
-        ]}
-      >
-        <Input  onChange={(e) => setInputage(e.target.value)} />
-      </Form.Item>
-
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-          <div style={{ color: "red", margin: "10px" }}>{inputError}</div>
+      
         
-         <button type="submit" className="signup__btn" onClick={handle_signup}> Signup </button>
-      </Form.Item>
-    </Form>
+  
+   
     </div>
       </div>
     </div>
